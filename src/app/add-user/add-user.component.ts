@@ -31,11 +31,7 @@ export class AddUserComponent {
             gender: this.userForm.value.gender
         }
 
-        if (this.userService.getUsers().find((user: { email: String | undefined; }) => user.email === newUser.email)) {
-            alert('User already exists');
-            this.onReset();
-            return;
-        }
+
         this.userService.addUser(newUser);
         alert('User added successfully');
         this.router.navigate(['/manage-user']);

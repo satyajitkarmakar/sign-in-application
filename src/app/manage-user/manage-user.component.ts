@@ -15,12 +15,13 @@ export class ManageUserComponent implements OnInit {
     constructor(private userService: UserService) { }
 
     ngOnInit() {
-        this.users = this.userService.getUsers();
+        this.userService.getUsers().subscribe(data => {
+            this.users = data;
+        });
     }
 
     deleteUser(id: number | undefined) {
         this.userService.deleteUser(id as number);
-        this.users = this.userService.getUsers();
     }
 
 
