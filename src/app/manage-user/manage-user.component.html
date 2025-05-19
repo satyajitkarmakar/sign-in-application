@@ -4,6 +4,7 @@
         <table class="table table-striped mt-3" *ngIf="users.length">
             <thead>
             <tr>
+                <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Gender</th>
@@ -12,6 +13,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let user of users; let i = index">
+                <td>{{user.id}}</td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.gender }}</td>

@@ -6,7 +6,7 @@ import {HTTP_TRANSFER_CACHE_ORIGIN_MAP, HttpClient} from '@angular/common/http';
     providedIn: 'root'
 })
 export class UserService {
-    baseUrl = 'http://localhost:3000/data/';
+    private baseUrl = 'http://localhost:3000/data';
 
     constructor(private http: HttpClient) {
 
@@ -17,10 +17,10 @@ export class UserService {
     }
 
     addUser(user: User) {
-
+        return this.http.post<User>(this.baseUrl, user);
     }
 
     deleteUser(id: number) {
-
+        return this.http.delete<User>(`${this.baseUrl}/${id}`)
     }
 }

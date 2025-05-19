@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../service/user.service';
 import { Router } from '@angular/router';
 import {User} from '../User';
+import {filter, map} from 'rxjs';
 
 @Component({
     selector: 'app-add-user',
@@ -12,6 +13,7 @@ import {User} from '../User';
 })
 export class AddUserComponent {
     userForm!: FormGroup;
+    ifExist: boolean = false;
 
     constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
         this.userForm = this.fb.group({
@@ -31,10 +33,23 @@ export class AddUserComponent {
             gender: this.userForm.value.gender
         }
 
+        this.userService.getUsers().subscribe(data => {
+            this.ifExist = data.some(user => user.email === newUser.email);
+        });
 
-        this.userService.addUser(newUser);
-        alert('User added successfully');
-        this.router.navigate(['/manage-user']);
+        if (this.ifExist) {
+            alert('User already exists');
+            this.userForm.reset();
+            return;
+        }
+
+        this.userService.addUser(newUser).subscribe(
+            () => {
+                alert('User added successfully');
+                this.router.navigate(['/manage-user']);
+            }
+        );
+
 
     }
 
