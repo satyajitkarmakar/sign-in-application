@@ -1,0 +1,16 @@
+{
+    "data": [
+        { "id": 1, "name": "Alice Johnson", "email": "alice.johnson@example.com", "password": "pass1234", "gender": "Female" },
+        { "id": 2, "name": "Bob Smith", "email": "bob.smith@example.com", "password": "secure456", "gender": "Male" },
+        { "id": 3, "name": "Charlie Rose", "email": "charlie.rose@example.com", "password": "mypassword", "gender": "Male" },
+        { "id": 4, "name": "Diana Evans", "email": "diana.evans@example.com", "password": "evans2021", "gender": "Female" },
+        { "id": 5, "name": "Ethan Brown", "email": "ethan.brown@example.com", "password": "brownie88", "gender": "Male" },
+        { "id": 6, "name": "Fiona Scott", "email": "fiona.scott@example.com", "password": "fiona123", "gender": "Female" },
+        { "id": 7, "name": "George Martin", "email": "george.martin@example.com", "password": "martin789", "gender": "Male" },
+        { "id": 8, "name": "Hannah Lee", "email": "hannah.lee@example.com", "password": "hannahlee", "gender": "Female" },
+        { "id": 9, "name": "Ian Wright", "email": "ian.wright@example.com", "password": "wright321", "gender": "Male" },
+        { "id": 10, "name": "Julia Adams", "email": "julia.adams@example.com", "password": "adams007", "gender": "Female" }
+    ]
+
+
+}
